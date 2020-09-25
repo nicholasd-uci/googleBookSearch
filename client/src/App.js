@@ -1,16 +1,17 @@
 import React from 'react'
 import Home from './pages/Home'
-import Home from './pages/Saved'
+import Saved from './pages/Saved'
 import { 
   BrowserRouter as Router, 
   Route, 
   Switch, 
   Link
 } from 'react-router-dom'
-import Saved from './pages/Saved'
+
 
 const App = () => {
   return(
+    <>
     <Router>
       <div>
         <nav>
@@ -23,5 +24,10 @@ const App = () => {
         </Switch>
       </div>
     </Router>
+    <Home />
+    <Saved />
+    </>
   )
 }
+
+export default App

@@ -14,7 +14,13 @@ const [ bookState, setBookState] = useState({
 
     bookState.handleSearchGoogle = event => {
         event.preventDefault()
+        API.getBook(bookState.search)
+        .then(({ data }) => {
+            setBookState({ ...bookState, book: data, search: ''})
+        })
+        .catch(err => console.log(err))
     }
+
 
     return(
         <>
@@ -29,7 +35,7 @@ const [ bookState, setBookState] = useState({
                     <button onClick={bookState.handleSearchGoogle}>Google Book Search Here</button>
                 </p>
                 <p>
-                    Thanks for using our page <3!
+                    Thanks for using our page!
                 </p>
             </form>
         </>
