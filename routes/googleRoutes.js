@@ -3,7 +3,7 @@ const axios = require('axios')
 const { Book } = require('../models')
 
 router.get('/google', (req, res) => {
-    axios.get(`https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyAMqNANxbCMQrbBzYpOI5mSD5acczmEj3o`)
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=time&printType=books&key=AIzaSyAMqNANxbCMQrbBzYpOI5mSD5acczmEj3o&q=${req.params.items}`)
         .then(({ data }) => data.items.map(book => ({
             title: book.volumeInfo.title,
             author: book.volumeInfo.author[0],
