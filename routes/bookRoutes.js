@@ -10,7 +10,7 @@ router.get('/book', (req, res) => {
 
 
 // POST One
-router.post('/book/', (req, res) => {
+router.post('/book', (req, res) => {
     Book.create(req.body)
         .then(book => res.json(book))
         .catch(err => console.log(err))
