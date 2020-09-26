@@ -25,8 +25,8 @@ const App = () => {
         </Switch>
       </div>
     </Router>
+    
     <Home />
-    <Saved />
     </>
   )
 }
